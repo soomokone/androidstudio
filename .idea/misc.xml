@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/LG/AndroidStudioProjects/sumokwon/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/sumokwon/app/src/main/res/drawable/activity_listview.xml" value="0.1" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/sumokwon/app/src/main/res/drawable/circle.xml" value="0.1" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/sumokwon/app/src/main/res/drawable/ic_baseline_dehaze_24.xml" value="0.1" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/sumokwon/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/sumokwon/app/src/main/res/drawable/line.xml" value="0.1" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/sumokwon/app/src/main/res/drawable/line2.xml" value="0.1" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/sumokwon/app/src/main/res/drawable/road_size.xml" value="0.1" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/sumokwon/app/src/main/res/layout/activity_listview.xml" value="0.10416666666666667" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/sumokwon/app/src/main/res/layout/activity_main.xml" value="0.14767932489451477" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/sumokwon/app/src/main/res/layout/advertisement.xml" value="0.16354166666666667" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/sumokwon/app/src/main/res/layout/advertisement2.xml" value="0.1" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/sumokwon/app/src/main/res/layout/calender.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/sumokwon/app/src/main/res/layout/design.xml" value="0.22" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/sumokwon/app/src/main/res/layout/listview_list.xml" value="0.1638888888888889" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/sumokwon/app/src/main/res/layout/map.xml" value="0.1" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/sumokwon/app/src/main/res/layout/search.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/LG/AndroidStudioProjects/sumokwon/app/src/main/res/layout/search1.xml" value="0.17916666666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
