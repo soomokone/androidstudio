@@ -28,16 +28,15 @@ public class List_calender extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_calender);
-        calendarView=findViewById(R.id.calendarView);
-        diaryTextView=findViewById(R.id.diaryTextView);
+        calendarView=findViewById(R.id.calendarView1);
+        diaryTextView=findViewById(R.id.diaryTextView1);
         save_Btn=findViewById(R.id.save_Btn);
 
-        textView2=findViewById(R.id.textView2);
-        textView3=findViewById(R.id.textView3);
-        contextEditText=findViewById(R.id.contextEditText);
+        textView2=findViewById(R.id.textView21);
+        textView3=findViewById(R.id.textView31);
+        contextEditText=findViewById(R.id.contextEditText1);
         //로그인 및 회원가입 엑티비티에서 이름을 받아옴
         //Intent intent=getIntent();
         //String name=intent.getStringExtra("userName");
@@ -59,24 +58,25 @@ public class List_calender extends AppCompatActivity{
         });
 
         //저장버튼 클릭
+        save_Btn=(Button)findViewById(R.id.save_Btn);
         save_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Button Button = (Button) findViewById(R.id.save_Btn);
-                Button.setOnClickListener(new View.OnClickListener() {
+                //Button Button = (Button) findViewById(R.id.save_Btn);
+                //Button.setOnClickListener(new View.OnClickListener() {
                     //@Override
-                    public void onClick(View view) {
-                        saveDiary(fname);
-                        str=contextEditText.getText().toString();
-                        //textView2.setText(str);
-                        save_Btn.setVisibility(View.INVISIBLE);
-                        contextEditText.setVisibility(View.INVISIBLE);
-                        //textView2.setVisibility(View.VISIBLE);
-                        Intent intent = new Intent(getApplicationContext(),ListViewActivity.class);
-                        intent.putExtra("str",str);
-                        startActivityForResult(intent,RESULT_OK);
-                    }
-                });
+                   // public void onClick(View view) {
+                saveDiary(fname);
+                str=contextEditText.getText().toString();
+                //textView2.setText(str);
+                save_Btn.setVisibility(View.INVISIBLE);
+                contextEditText.setVisibility(View.INVISIBLE);
+                //textView2.setVisibility(View.VISIBLE);
+                Intent intent = new Intent(getApplicationContext(),ListViewActivity.class);
+                intent.putExtra("str",str);
+                startActivityForResult(intent,RESULT_OK);
+                   // }
+                //});
 //                saveDiary(fname);
 //                str=contextEditText.getText().toString();
 //                textView2.setText(str);

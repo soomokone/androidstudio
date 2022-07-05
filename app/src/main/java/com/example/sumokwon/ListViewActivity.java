@@ -23,8 +23,8 @@ public class ListViewActivity extends AppCompatActivity {
     private listAdapter adapter;
     String city;
     String str;
-    private Button btn_back,btn_map;
-    private TextView list_text,txt_btn_cal,txt_btn_man;
+    private Button btn_back,btn_map,txt_btn_cal,txt_btn_man;
+    private TextView list_text;
     public static final int REQUEST_CODE_MENU = 101;
 
     List<String> items = Arrays.asList(
@@ -45,7 +45,7 @@ public class ListViewActivity extends AppCompatActivity {
         list_text=(TextView)findViewById(R.id.list_text);
         list_text.setText(city);
 
-        txt_btn_cal=(TextView)findViewById(R.id.txt_btn_cal);//날짜선택 textview
+        txt_btn_cal=(Button)findViewById(R.id.txt_btn_cal);//날짜선택 textview
         txt_btn_cal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,7 +55,7 @@ public class ListViewActivity extends AppCompatActivity {
             }
         });
 
-        txt_btn_man=(TextView)findViewById(R.id.txt_btn_man);//인원 선택 textview
+        txt_btn_man=(Button)findViewById(R.id.txt_btn_man);//인원 선택 textview
         txt_btn_man.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
