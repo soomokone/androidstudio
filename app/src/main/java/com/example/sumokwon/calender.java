@@ -1,7 +1,6 @@
 package com.example.sumokwon;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Intent;
@@ -13,7 +12,6 @@ import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
@@ -103,7 +101,6 @@ public class calender extends AppCompatActivity {
             fis.close();
 
             str=new String(fileData);
-
             contextEditText.setVisibility(View.INVISIBLE);
             textView2.setVisibility(View.VISIBLE);
             textView2.setText(str);
