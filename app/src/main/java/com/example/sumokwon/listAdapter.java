@@ -41,7 +41,7 @@ public class listAdapter extends BaseAdapter {
         Log.d(TAG, "getView: "+position);
         LayoutInflater inflater=LayoutInflater.from(parent.getContext());
         View itemView=inflater.inflate(R.layout.listview_list,parent,false);
-        TextView tv=itemView.findViewById(R.id.tv_title);
+        TextView tv=itemView.findViewById(R.id.title);
         tv.setText(getItem(position).toString());
         return itemView;
     }
