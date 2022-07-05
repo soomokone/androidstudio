@@ -11,20 +11,103 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.android.volley.VolleyError;
+
 import me.relex.circleindicator.CircleIndicator3;
 
 public class MainActivity extends AppCompatActivity {
-
 
     private ViewPager2 mPager;
     private FragmentStateAdapter pagerAdapter;
     private int num_page = 4;
     private CircleIndicator3 mIndicator;
+    Button seoul,incheon,gangwon,daejon,gyeongnam,jeju,jeolla,location2;
+    String city;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        seoul=(Button)findViewById(R.id.seoul);
+        incheon=(Button)findViewById(R.id.incheon);
+        gangwon=(Button)findViewById(R.id.gangwon);
+        daejon=(Button)findViewById(R.id.daejon);
+        gyeongnam=(Button)findViewById(R.id.gyeongnam);
+        jeju=(Button)findViewById(R.id.jeju);
+        jeolla=(Button)findViewById(R.id.jeolla);
+        location2=(Button)findViewById(R.id.location2);
+
+        seoul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),ListViewActivity.class );
+                city="서울";
+                intent.putExtra("city",city);
+                startActivity(intent);//activity 실행
+            }
+        });
+
+        incheon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),ListViewActivity.class );
+                city="경기/인천";
+                intent.putExtra("city",city);
+                startActivity(intent);//activity 실행
+            }
+        });
+
+        gangwon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),ListViewActivity.class );
+                city="강원";
+                intent.putExtra("city",city);
+                startActivity(intent);//activity 실행
+            }
+        });
+
+        daejon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),ListViewActivity.class );
+                city="충청/대전";
+                intent.putExtra("city",city);
+                startActivity(intent);//activity 실행
+            }
+        });
+
+        gyeongnam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),ListViewActivity.class );
+                city="경상";
+                intent.putExtra("city",city);
+                startActivity(intent);//activity 실행
+            }
+        });
+
+        jeju.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),ListViewActivity.class );
+                city="제주";
+                intent.putExtra("city",city);
+                startActivity(intent);//activity 실행
+            }
+        });
+
+        jeolla.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),ListViewActivity.class );
+                city="전라";
+                intent.putExtra("city",city);
+                startActivity(intent);//activity 실행
+            }
+        });
+
 
         Button Button = (Button) findViewById(R.id.navi);
         Button.setOnClickListener(new View.OnClickListener() {

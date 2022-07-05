@@ -62,7 +62,6 @@ public class calender extends AppCompatActivity {
         });
         save_Btn.setOnClickListener(new View.OnClickListener() {
 
-
             @Override
             public void onClick(View view) {
 
@@ -110,8 +109,6 @@ public class calender extends AppCompatActivity {
             textView2.setText(str);
 
             save_Btn.setVisibility(View.INVISIBLE);
-
-
 
             if(textView2.getText()==null){
                 textView2.setVisibility(View.INVISIBLE);
