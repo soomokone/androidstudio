@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private int num_page = 4;
     private CircleIndicator3 mIndicator;
     Button seoul,incheon,gangwon,daejon,gyeongnam,jeju,jeolla,location2;
-    String city;
+    String city,url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(),ListViewActivity.class );
                 city="서울";
+                url = "http://soomokone.dothome.co.kr/seoul.php";
                 intent.putExtra("city",city);
+                intent.putExtra("url",url);
                 startActivity(intent);//activity 실행
             }
         });
@@ -53,7 +55,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(),ListViewActivity.class );
                 city="경기/인천";
+                url = "http://soomokone.dothome.co.kr/incheon.php";
                 intent.putExtra("city",city);
+                intent.putExtra("url",url);
                 startActivity(intent);//activity 실행
             }
         });
@@ -63,7 +67,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(),ListViewActivity.class );
                 city="강원";
+                url = "http://soomokone.dothome.co.kr/gangwon.php";
                 intent.putExtra("city",city);
+                intent.putExtra("url",url);
                 startActivity(intent);//activity 실행
             }
         });
@@ -73,7 +79,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(),ListViewActivity.class );
                 city="충청/대전";
+                url = "http://soomokone.dothome.co.kr/daejeon.php";
                 intent.putExtra("city",city);
+                intent.putExtra("url",url);
                 startActivity(intent);//activity 실행
             }
         });
@@ -83,7 +91,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(),ListViewActivity.class );
                 city="경상";
+                url = "http://soomokone.dothome.co.kr/gyeongsang.php";
                 intent.putExtra("city",city);
+                intent.putExtra("url",url);
                 startActivity(intent);//activity 실행
             }
         });
@@ -93,7 +103,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(),ListViewActivity.class );
                 city="제주";
+                url = "http://soomokone.dothome.co.kr/jeju.php";
                 intent.putExtra("city",city);
+                intent.putExtra("url",url);
                 startActivity(intent);//activity 실행
             }
         });
@@ -103,7 +115,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(),ListViewActivity.class );
                 city="전라";
+                url = "http://soomokone.dothome.co.kr/jeonra.php";
                 intent.putExtra("city",city);
+                intent.putExtra("url",url);
                 startActivity(intent);//activity 실행
             }
         });

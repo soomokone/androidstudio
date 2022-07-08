@@ -2,51 +2,102 @@ package com.example.sumokwon;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.opengl.EGLExt;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class ListViewActivity extends AppCompatActivity {
 
     private static final String TAG = "Main_Activity";
+
+    private static final String TAG_JSON="list";
+    private static final String TAG_region = "region";
+    private static final String TAG_city = "city";
+    private static final String TAG_name = "name";
+    private static final String TAG_address = "address";
+    private static final String TAG_link = "link";
+    private static final String TAG_number="number";
+    private static final String TAG_plant_secies = "plant_species";
+    private static final String TAG_lon = "lon";
+    private static final String TAG_lat="lat";
+    private static final String TAG_holiday = "holiday";
+    private static final String TAG_adult = "adult";
+    private static final String TAG_teenager="teenager";
+    private static final String TAG_army = "army";
+    private static final String TAG_child = "child";
+    private static final String TAG_elderly="elderly";
+    private static final String TAG_idx = "idx";
+    private static final String TAG_parking = "parking";
+    private static final String TAG_comforts="comforts";
+    private static final String TAG_summer = "summer";
+    private static final String TAG_winter = "winter";
+    private static final String TAG_deadline="deadline";
+
+
+    public ListView listView;
+    //list item
+    ArrayList<SampleData> mItemList;
+    //ListView adapter
+    public ListViewAdapter mlistviewAdatper;
+    //private ListViewAdapter adapter = new ListViewAdapter();
+    public String mJsonString;
+
+    String city,a_url;
+    // private Context mContext=ListViewActivity.this;
+    private String str;
+    public static final int REQUEST_CODE_MENU = 101;
     private Context mContext=ListViewActivity.this;
-    private ListView listView;
-    private listAdapter adapter;
-    String city;
-    String str;
+
     private Button btn_back,btn_map,txt_btn_cal,txt_btn_man;
     private TextView list_text;
-    public static final int REQUEST_CODE_MENU = 101;
-
-    List<String> items = Arrays.asList(
-            "히어로즈","24시","로스트","로스트룸","빅뱅이론","프렌즈","덱스터","글리","히어로즈","24시","로스트","로스트룸","빅뱅이론","프렌즈","덱스터","글리"
-    );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listview);
+
+
         Intent i=getIntent();
-        adapter=new listAdapter();
-        listView=findViewById(R.id.list_view);
-        adapter.addItems(items);
-        listView.setAdapter(adapter);
         city=i.getStringExtra("city");
+        a_url=i.getStringExtra("url");
+
 
         list_text=(TextView)findViewById(R.id.list_text);
         list_text.setText(city);
 
+        Intent intent=new Intent(getApplicationContext(),ListViewActivity.class );
+
+        //listview
+        ListViewActivity.GetData task = new ListViewActivity.GetData();
+        task.execute(a_url);
+
         txt_btn_cal=(Button)findViewById(R.id.txt_btn_cal);//날짜선택 textview
         txt_btn_cal.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 //list_calender로 넘기기
@@ -86,4 +137,173 @@ public class ListViewActivity extends AppCompatActivity {
         }
 
     }
+
+    //데이터 받아옴
+    private class GetData extends AsyncTask<String, Void, String> {
+        ProgressDialog progressDialog;
+        String errorString = null;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            progressDialog = ProgressDialog.show(ListViewActivity.this,
+                    "Please Wait", null, true, true);
+        }
+
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+
+            progressDialog.dismiss();
+            //m TextViewResult.setText(result);
+            Log.d(TAG, "response  - " + result);
+
+            if (result == null) {
+
+                //mTextViewResult.setText(errorString);
+            } else {
+                //php에서 받은 json 값
+                mJsonString = result;
+                //list로 바꾸기
+                Result();
+
+            }
+        }
+
+
+        @Override
+        protected String doInBackground(String... params) {
+
+            String serverURL = params[0];
+
+            try {
+
+                URL url = new URL(serverURL);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+
+                httpURLConnection.setReadTimeout(5000);
+                httpURLConnection.setConnectTimeout(5000);
+                httpURLConnection.connect();
+
+                int responseStatusCode = httpURLConnection.getResponseCode();
+                Log.d(TAG, "response code - " + responseStatusCode);
+
+                InputStream inputStream;
+                if (responseStatusCode == HttpURLConnection.HTTP_OK) {
+                    inputStream = httpURLConnection.getInputStream();
+                } else {
+                    inputStream = httpURLConnection.getErrorStream();
+                }
+
+
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+                StringBuilder sb = new StringBuilder();
+                String line;
+
+                while ((line = bufferedReader.readLine()) != null) {
+                    sb.append(line);
+                }
+
+                bufferedReader.close();
+                return sb.toString().trim();
+
+            } catch (Exception e) {
+
+                Log.d(TAG, "InsertData: Error ", e);
+                errorString = e.toString();
+                return null;
+            }
+
+        }
+    }
+
+
+    private void Result() {
+        try {
+            JSONObject jsonObject = new JSONObject(mJsonString);
+            JSONArray jsonArray = jsonObject.getJSONArray(TAG_JSON);
+            Log.d(TAG, "response1  - " + jsonArray);
+
+            mItemList = new ArrayList<>();
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject item = jsonArray.getJSONObject(i);
+
+                String name1 = item.getString(TAG_name);
+                String city1 = item.getString(TAG_city);
+
+                String strAdult = item.getString(TAG_adult); // 123 대신에 db에서 값 받아서 넣기
+                String strTeen = item.getString(TAG_teenager);
+                String strArmy = item.getString(TAG_army);
+                String strChild = item.getString(TAG_child);
+                String strElder = item.getString(TAG_elderly);
+
+                String price1 = String.valueOf(Calc(strAdult,strTeen,strArmy,strChild,strElder));
+
+                Log.d(TAG, "name  - " + name1);
+                Log.d(TAG, "city  - " + city1);
+                Log.d(TAG, "city  - " + price1);
+                //arraylist.append(store_id,store_name,Price);
+                //marrayList = new ArrayList<String>();
+                //marrayList.add(name);
+                //marrayList.add(city);
+                mItemList.add(new SampleData(name1,city1,price1));
+                Log.d(TAG, "response2  - " + mItemList);
+
+                //System.out.println(Arrays.toString(a));
+                //HashMap<String, String> hashMap = new HashMap<>();
+                //hashMap.put(TAG_city, city);
+
+            }
+
+            //mlistviewAdatper = new ListViewAdapter(this,mItemList);
+            // mArrayList.add(hashMap);
+            Log.d(TAG, "response2  - " + mItemList);
+
+//            ListAdapter adapter = new SimpleAdapter(
+//                    ListViewActivity.this, ArrayList,  R.layout.listview_list,
+//                    new String[]{TAG_name,TAG_city,},
+//                    new int[]{R.id.name, R.id.city}
+//            );
+
+        } catch (JSONException e) {
+
+            Log.d(TAG, "showResult : ", e);
+        }
+        mlistviewAdatper = new ListViewAdapter(this,mItemList);
+
+        listView = (ListView) findViewById(R.id.list_view);
+        listView.setAdapter(mlistviewAdatper);
+        listView.setOnItemClickListener((new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View a_view, int position, long l) {
+                final SampleData item = (SampleData) mlistviewAdatper.getItem(position);
+                Toast.makeText(ListViewActivity.this, item.getCity(), Toast.LENGTH_LONG).show();
+            }
+        }));
+    }
+
+    public static Integer Calc(String strAdult,String strTeen,String strArmy,String strChild,String strElder) {
+        // TODO Auto-generated method stub
+
+        int adult = Integer.parseInt(strAdult); // string -> int 변환
+        int teenager = Integer.parseInt(strTeen);
+        int army = Integer.parseInt(strArmy);
+        int child = Integer.parseInt(strChild);
+        int elderly = Integer.parseInt(strElder);
+
+        // 0 자리에 수 받아오기
+        int numAdult = 1; // 성인 수
+        int numTeen = 0; // 청소년 수
+        int numArmy = 0; // 군인 수
+        int numChild = 0; // 어린이 수
+        int numElder = 0; // 노인 수
+
+        Integer calc = adult*numAdult + teenager*numTeen + army*numArmy + child*numChild + elderly*numElder;
+        return calc;
+    };
+
 }
