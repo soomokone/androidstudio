@@ -21,7 +21,7 @@ public class MyAdapter extends FragmentStateAdapter {
         int index = getRealPosition(position);
 
         if(index==0) return new Fragement_1();
-        else if(index==1) return new Fragement_5();
+        else if(index==1) return new Fragement_2();
         else if(index==2) return new Fragement_3();
         //else if(index==3) return new Fragement_4();
         else return new Fragement_4();

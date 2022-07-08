@@ -31,6 +31,15 @@
             app:layout_constraintStart_toStartOf="parent" />
 
 
+        <Button
+            android:id="@+id/weather"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="#00ff0000"
+            android:hint="날씨 확인"
+            android:textColor="#FBF8F8"
+            android:textSize="20sp" />
 
 
     </LinearLayout>

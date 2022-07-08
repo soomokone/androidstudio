@@ -13,7 +13,7 @@ public class Fragement_2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(
-                R.layout.advertisement2, container, false);
+                R.layout.advertisement3, container, false);
 
         return rootView;
     }

@@ -47,6 +47,9 @@
             android:theme="@style/Theme.AppCompat"
             ></activity>
 
+        <activity android:name=".weatheractivity"
+            android:theme="@style/Theme.AppCompat"
+            ></activity>
         <meta-data
 
             android:name="com.naver.maps.map.CLIENT_ID"

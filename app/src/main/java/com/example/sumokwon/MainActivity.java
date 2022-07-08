@@ -133,6 +133,19 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
+
+
+        Button = (Button) findViewById(R.id.weather);
+        Button.setOnClickListener(new View.OnClickListener() {
+
+            //@Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), weatheractivity.class);
+                startActivity(intent);
+            }
+
+
+        });
 /**
  * 가로 슬라이드 뷰 Fragment
  */
