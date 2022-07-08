@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:background="#F9FBF9"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ListViewActivity">
@@ -16,14 +17,18 @@
             android:id="@+id/btn_back"
             android:layout_width="40dp"
             android:layout_height="40dp"
+
             android:layout_alignParentLeft="true"
             android:background="@drawable/x"
             android:gravity="center" />
         <TextView
             android:id="@+id/list_text"
+            android:fontFamily="@font/diary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:textColor="#FF5CA34B"
+            android:textStyle="bold"
             android:layout_marginLeft="60dp"
             android:textSize="25dp" />
 
@@ -33,6 +38,9 @@
             android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:gravity="center"
+            android:textColor="#FF5CA34B"
+            android:fontFamily="@font/diary"
+            android:background="#FFFFFE"
             android:text="지도보기" />
     </RelativeLayout>
 
@@ -42,26 +50,31 @@
         android:layout_margin="10dp">
         <Button
             android:id="@+id/txt_btn_cal"
+            android:textColor="#FF5CA34B"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="80dp"
-            android:background="#E8504C4C"
+            android:background="@drawable/line"
             android:gravity="center"
+            android:fontFamily="@font/diary"
             android:text="날짜"
             android:textSize="25dp" />
         <Button
             android:id="@+id/txt_btn_man"
+            android:textColor="#FF5CA34B"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="80dp"
             android:layout_alignParentRight="true"
             android:gravity="center"
-            android:background="#E8504C4C"
+            android:fontFamily="@font/diary"
+            android:background="@drawable/line"
             android:text="인원"
             android:textSize="25dp" />
     </RelativeLayout>
     <ListView
         android:id="@+id/list_view"
+        android:background="@drawable/line"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </LinearLayout>

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
@@ -16,7 +17,9 @@ import com.android.volley.VolleyError;
 import me.relex.circleindicator.CircleIndicator3;
 
 public class MainActivity extends AppCompatActivity {
-
+    private Button btnAdd, btnMinus;
+    private TextView tvcount;
+    private int count = 0;
     private ViewPager2 mPager;
     private FragmentStateAdapter pagerAdapter;
     private int num_page = 4;
@@ -37,7 +40,10 @@ public class MainActivity extends AppCompatActivity {
         jeju=(Button)findViewById(R.id.jeju);
         jeolla=(Button)findViewById(R.id.jeolla);
         location2=(Button)findViewById(R.id.location2);
-
+        tvcount = findViewById(R.id.tv_count);
+        tvcount.setText(count+"");
+        btnAdd = findViewById(R.id.btn_add);
+        btnMinus = findViewById(R.id.btn_minus);
         seoul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,6 +55,23 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);//activity 실행
             }
         });
+
+        btnMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count++;
+                tvcount.setText(count+"");
+            }
+        });
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count--;
+                tvcount.setText(count+"");
+            }
+        });
+
 
         incheon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,43 +146,32 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        Button Button = (Button) findViewById(R.id.navi);
+
+
+    Button Button = (Button) findViewById(R.id.map);
         Button.setOnClickListener(new View.OnClickListener() {
 
             //@Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),mapActivity.class);
+                Intent intent = new Intent(getApplicationContext(), mapActivity.class);
                 startActivity(intent);
             }
 
 
         });
 
-
-    Button = (Button) findViewById(R.id.search);
+        Button  = (Button) findViewById(R.id.calenderout);
         Button.setOnClickListener(new View.OnClickListener() {
 
             //@Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), searchActivity.class);
+                Intent intent = new Intent(getApplicationContext(), calender.class);
                 startActivity(intent);
             }
 
 
         });
 
-
-        Button = (Button) findViewById(R.id.weather);
-        Button.setOnClickListener(new View.OnClickListener() {
-
-            //@Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), weatheractivity.class);
-                startActivity(intent);
-            }
-
-
-        });
 /**
  * 가로 슬라이드 뷰 Fragment
  */

@@ -37,9 +37,6 @@
             android:theme="@style/Theme.AppCompat"
             ></activity>
 
-        <activity android:name=".searchActivity"
-            android:theme="@style/Theme.AppCompat"
-            ></activity>
         <activity android:name=".calender"
             android:theme="@style/Theme.AppCompat"
             ></activity>

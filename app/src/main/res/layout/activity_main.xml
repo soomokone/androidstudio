@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#5CA34B"
-    android:orientation="vertical">
+    android:background="#FAFBFA"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,7 +22,8 @@
             android:layout_margin="30dp"
             android:layout_marginBottom="16dp"
             android:text="sumokone"
-            android:textColor="#FBF8F8"
+            android:fontFamily="@font/diary"
+            android:textColor="#5CA34B"
             android:textSize="35sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -31,56 +31,85 @@
             app:layout_constraintStart_toStartOf="parent" />
 
 
-        <Button
-            android:id="@+id/weather"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:background="#00ff0000"
-            android:hint="날씨 확인"
-            android:textColor="#FBF8F8"
-            android:textSize="20sp" />
 
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:background="@drawable/line2"
-        >
-
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
 
         <Button
-            android:id="@+id/search"
-            android:layout_width="345dp"
+            android:id="@+id/calenderout"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:hint="search"
-            android:background="#00ff0000"
-            android:textColor="#FBF8F8"
-            android:textSize="30sp" />
+            android:layout_marginLeft="0dp"
+            android:background="@drawable/line"
+            android:fontFamily="@font/diary"
+            android:gravity="center"
+            android:text="날짜"
+            android:textColor="#FF5CA34B"
+            android:textSize="25dp" />
 
-        <ImageView
-            android:id="@+id/search_button"
-            android:layout_width="43dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/ic_baseline_search_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/adult"
+            android:layout_width="30dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="60dp"
+            android:gravity="center"
+            android:text="성인"
+            android:textColor="#FF5CA34B"
+            android:textSize="15sp"
+            tools:layout_editor_absoluteX="196dp"
+            tools:layout_editor_absoluteY="232dp" />
+
+        <Button
+            android:id="@+id/btn_minus"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="140dp"
+            android:background="@drawable/line"
+            android:fontFamily="@font/diary"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="#FF5CA34B"
+            android:textSize="25dp" />
 
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="30dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="110dp"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#FF5CA34B"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="196dp"
+            tools:layout_editor_absoluteY="232dp" />
+
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="90dp"
+            android:background="@drawable/line"
+            android:fontFamily="@font/diary"
+            android:gravity="center"
+            android:text="-"
+            android:textColor="#FF5CA34B"
+            android:textSize="25dp" />
+
+    </RelativeLayout>
+
+
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="92dp">
+
+        android:layout_height="110dp">
 
         <Button
             android:id="@+id/seoul"
@@ -90,7 +119,8 @@
             android:background="@drawable/circle"
             android:gravity="center"
             android:text="서울"
-            android:textColor="#FBF8F8"
+            android:textColor="#5CA34B"
+            android:fontFamily="@font/diary"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="10dp"
             tools:layout_editor_absoluteY="199dp" />
@@ -100,10 +130,11 @@
             android:layout_width="wrap_content"
             android:layout_height="75dp"
             android:layout_margin="5dp"
+            android:fontFamily="@font/diary"
             android:background="@drawable/circle"
             android:gravity="center"
             android:text="경기/인천"
-            android:textColor="#FBF8F8"
+            android:textColor="#5CA34B"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="10dp"
             tools:layout_editor_absoluteY="199dp" />
@@ -116,7 +147,8 @@
             android:background="@drawable/circle"
             android:gravity="center"
             android:text="강원"
-            android:textColor="#FBF8F8"
+            android:fontFamily="@font/diary"
+            android:textColor="#5CA34B"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="10dp"
             tools:layout_editor_absoluteY="199dp" />
@@ -129,7 +161,8 @@
             android:background="@drawable/circle"
             android:gravity="center"
             android:text="충청/대전"
-            android:textColor="#FBF8F8"
+            android:fontFamily="@font/diary"
+            android:textColor="#5CA34B"
             android:textSize="20sp"
             tools:layout_editor_absoluteX="10dp"
             tools:layout_editor_absoluteY="199dp" />
@@ -137,105 +170,110 @@
 
 
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="97dp">
+        android:layout_width="match_parent"
+        android:layout_height="110dp">
 
-            <Button
-                android:id="@+id/gyeongnam"
-                android:layout_width="wrap_content"
-                android:layout_height="75dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/circle"
-                android:gravity="center"
-                android:text="경상"
-                android:textColor="#FBF8F8"
-                android:textSize="20sp"
-                tools:layout_editor_absoluteX="10dp"
-                tools:layout_editor_absoluteY="199dp" />
+        <Button
+            android:id="@+id/gyeongnam"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:text="경상"
+            android:fontFamily="@font/diary"
+            android:textColor="#5CA34B"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="10dp"
+            tools:layout_editor_absoluteY="199dp" />
 
-            <Button
-                android:id="@+id/jeju"
-                android:layout_width="wrap_content"
-                android:layout_height="75dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/circle"
-                android:gravity="center"
-                android:textColor="#FBF8F8"
-                android:textSize="20sp"
-                android:text="제주"
-                tools:layout_editor_absoluteX="10dp"
-                tools:layout_editor_absoluteY="199dp" />
+        <Button
+            android:id="@+id/jeju"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:text="제주"
+            android:fontFamily="@font/diary"
+            android:textColor="#5CA34B"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="10dp"
+            tools:layout_editor_absoluteY="199dp" />
 
-            <Button
-                android:id="@+id/jeolla"
-                android:layout_width="wrap_content"
-                android:layout_height="75dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/circle"
-                android:gravity="center"
-                android:textColor="#FBF8F8"
-                android:textSize="20sp"
-                android:text="전라"
-                tools:layout_editor_absoluteX="10dp"
-                tools:layout_editor_absoluteY="199dp" />
+        <Button
+            android:id="@+id/jeolla"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:text="전라"
+            android:fontFamily="@font/diary"
+            android:textColor="#5CA34B"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="10dp"
+            tools:layout_editor_absoluteY="199dp" />
 
-            <Button
-                android:id="@+id/location2"
-                android:layout_width="wrap_content"
-                android:layout_height="75dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/circle"
-                android:gravity="center"
-                android:textColor="#FBF8F8"
-                android:textSize="20sp"
-                tools:layout_editor_absoluteX="10dp"
-                tools:layout_editor_absoluteY="199dp" />
-        </LinearLayout>
-
-
+        <Button
+            android:id="@+id/location2"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:textColor="#5CA34B"
+            android:textSize="20sp"
+            android:fontFamily="@font/diary"
+            tools:layout_editor_absoluteX="10dp"
+            tools:layout_editor_absoluteY="199dp" />
+    </LinearLayout>
 
 
     <FrameLayout
-        android:layout_gravity="center"
         android:layout_width="400dp"
-        android:layout_height="200dp">
+        android:layout_height="200dp"
+        android:layout_gravity="center">
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewpager"
-            android:layout_gravity="center"
-            android:clipToPadding="false"
-            android:clipChildren="false"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:layout_marginBottom="10dp"/>
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:scaleType="fitXY" />
 
         <me.relex.circleindicator.CircleIndicator3
             android:id="@+id/indicator"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_marginBottom="10dp"
-            android:layout_gravity="bottom"/>
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp" />
 
     </FrameLayout>
 
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="147dp">
+        android:layout_height="110dp">
+
 
         <Button
-            android:id="@+id/navi"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="150dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/road_size"
+            android:id="@+id/map"
+            android:layout_width="390dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/line"
+            android:fontFamily="@font/diary"
             android:gravity="center"
+            android:text="근처 수목원"
+            android:textColor="#FF5CA34B"
+            android:textSize="25dp" />
 
-            android:textColor="#FBF8F8"
-            android:textSize="20sp" />
+
     </LinearLayout>
+
 
 </LinearLayout>
 

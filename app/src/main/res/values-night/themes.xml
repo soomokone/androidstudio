@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Sumokwon" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Sumokwon" parent="Theme.AppCompat.Light">
         <!-- Primary brand color. -->
         <item name="windowActionBar">false</item>
 
