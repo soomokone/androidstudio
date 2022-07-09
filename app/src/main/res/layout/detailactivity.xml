@@ -17,17 +17,17 @@
             android:background="@drawable/x"
             android:gravity="center" />
 
-        <TextView
-            android:id="@+id/namesu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:fontFamily="@font/diary"
-            android:gravity="center"
-            android:text="수목원 이름 출력"
-            android:textColor="#FF5CA34B"
-            android:textSize="25dp"
-            android:textStyle="bold" />
+<!--        <TextView-->
+<!--            android:id="@+id/namesu"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="60dp"-->
+<!--            android:fontFamily="@font/diary"-->
+<!--            android:gravity="center"-->
+<!--            android:text="수목원 이름 출력"-->
+<!--            android:textColor="#FF5CA34B"-->
+<!--            android:textSize="25dp"-->
+<!--            android:textStyle="bold" />-->
 
 
     </RelativeLayout>
@@ -52,63 +52,244 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:background="@drawable/line2"
+
         android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/detail_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:fontFamily="@font/diary"
-            android:gravity="center"
-            android:text="1"
-            android:textColor="#FF5CA34B"
-            android:textSize="30dp"
-            android:textStyle="bold" />
+            <!--            <TextView-->
+            <!--                android:id="@+id/detail_name1"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginLeft="0dp"-->
+            <!--                android:fontFamily="@font/diary"-->
+            <!--                android:gravity="center"-->
+            <!--                android:text="이름:"-->
+            <!--                android:textColor="#FF5CA34B"-->
+            <!--                android:textSize="25dp"-->
+            <!--                android:textStyle="bold" />-->
 
-        <TextView
-            android:id="@+id/detail_address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:fontFamily="@font/diary"
-            android:gravity="center"
-            android:text="2"
-            android:textColor="#FF5CA34B"
-            android:textSize="30dp"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/detail_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
+                android:fontFamily="@font/diary"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="#FF5CA34B"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/detail_address1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:fontFamily="@font/diary"
+                android:gravity="center"
+                android:text="주소:"
+                android:textColor="#FF5CA34B"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detail_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:fontFamily="@font/diary"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="#FF5CA34B"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/detail_link3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:fontFamily="@font/diary"
+                android:gravity="center"
+                android:text="링크:"
+                android:textColor="#FF5CA34B"
+                android:textSize="25dp"
+                android:textStyle="bold" />
         <TextView
             android:id="@+id/detail_link"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
+            android:layout_marginLeft="0dp"
             android:fontFamily="@font/diary"
             android:gravity="center"
             android:text="3"
             android:textColor="#FF5CA34B"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/phone_number1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:fontFamily="@font/diary"
+                android:gravity="center"
+                android:text="전화번호:"
+                android:textColor="#FF5CA34B"
+                android:textSize="25dp"
+                android:textStyle="bold" />
         <TextView
-            android:id="@+id/four"
+            android:id="@+id/phone_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
+            android:layout_marginLeft="0dp"
             android:fontFamily="@font/diary"
             android:gravity="center"
-            android:text="4"
+            android:text="phonenumber"
             android:textColor="#FF5CA34B"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:textStyle="bold" />
 
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/adult"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="0dp"
+                android:background="@drawable/man"
+                android:gravity="center"
+                android:textColor="#FF5CA34B"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/adultprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:fontFamily="@font/diary"
+                android:gravity="center"
+                android:text="adul"
+                android:textColor="#FF5CA34B"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/adultpricewon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:fontFamily="@font/diary"
+                android:gravity="center"
+                android:text="원"
+                android:textColor="#FF5CA34B"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/kids"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="0dp"
+                android:background="@drawable/child"
+                android:gravity="center"
+                android:textColor="#FF5CA34B"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/kidprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:fontFamily="@font/diary"
+                android:gravity="center"
+                android:text="kid"
+                android:textColor="#FF5CA34B"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/kidpricewon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:fontFamily="@font/diary"
+                android:gravity="center"
+                android:text="원"
+                android:textColor="#FF5CA34B"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/elderr"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="0dp"
+                android:background="@drawable/elder"
+                android:gravity="center"
+                android:textColor="#FF5CA34B"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/elderprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:fontFamily="@font/diary"
+                android:gravity="center"
+                android:text="elder"
+                android:textColor="#FF5CA34B"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/elderpricewon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:fontFamily="@font/diary"
+                android:gravity="center"
+                android:text="원"
+                android:textColor="#FF5CA34B"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
         <TextView
             android:id="@+id/five"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
+            android:layout_marginLeft="0dp"
             android:fontFamily="@font/diary"
             android:gravity="center"
             android:text="5"
@@ -121,7 +302,7 @@
             android:id="@+id/six"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
+            android:layout_marginLeft="0dp"
             android:fontFamily="@font/diary"
             android:gravity="center"
             android:text="6"

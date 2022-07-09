@@ -3,24 +3,26 @@ package com.example.sumokwon;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class detailActivity extends AppCompatActivity {
 
-    private TextView detail_name,detail_address,detail_link;
-    String name,address,link;
+    private TextView detail_name, detail_address, detail_link;
+    String name, address, link;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detailactivity);
 
-        Intent i=getIntent();
-        name=i.getStringExtra("name");
-        address=i.getStringExtra("address");
-        link=i.getStringExtra("link");
+        Intent i = getIntent();
+        name = i.getStringExtra("name");
+        address = i.getStringExtra("address");
+        link = i.getStringExtra("link");
 
         detail_name = findViewById(R.id.detail_name);
         detail_link = findViewById(R.id.detail_link);
@@ -31,6 +33,14 @@ public class detailActivity extends AppCompatActivity {
         detail_link.setText(link);
 
 
-}}
+        Button Button=(Button)findViewById(R.id.btn_back);
+       Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { onBackPressed();}
+        });
+
+    }
+
+}
 
 

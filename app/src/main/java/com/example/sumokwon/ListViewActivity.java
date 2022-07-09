@@ -31,7 +31,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ListViewActivity extends AppCompatActivity {
+    private Button btnAdd3,btnAdd4,btnAdd5,btnMinus3,btnMinus4,btnMinus5;
 
+    private TextView tvcount3,tvcount4,tvcount5;
+    private int count3 = 0;
+    private int count4=0;
+    private int count5=0;
     private static final String TAG = "Main_Activity";
 
     private static final String TAG_JSON="list";
@@ -96,7 +101,7 @@ public class ListViewActivity extends AppCompatActivity {
         task.execute(a_url);
 
 
-        txt_btn_cal=(Button)findViewById(R.id.txt_btn_cal);//날짜선택
+        txt_btn_cal=(Button)findViewById(R.id.calenderout1);//날짜선택
         txt_btn_cal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,14 +111,14 @@ public class ListViewActivity extends AppCompatActivity {
             }
         });
 
-
-        txt_btn_man=(Button)findViewById(R.id.txt_btn_man);//인원 선택 textview
-        txt_btn_man.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //인원 선택 창 넘어가기
-            }
-        });
+//
+//        txt_btn_man=(Button)findViewById(R.id.txt_btn_man);//인원 선택 textview
+//        txt_btn_man.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                //인원 선택 창 넘어가기
+//            }
+//        });
 
 
         btn_back=(Button)findViewById(R.id.btn_back);
@@ -129,6 +134,81 @@ public class ListViewActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //지도로 넘어가기
             }
+        });
+
+        tvcount3 = findViewById(R.id.tv_count3);
+        tvcount3.setText(count3+"");
+        btnAdd3 = findViewById(R.id.btn_add3);
+        btnMinus3 = findViewById(R.id.btn_minus3);
+
+        btnAdd4=findViewById(R.id.btn_add4);
+        btnMinus4= findViewById(R.id.btn_minus4);
+        tvcount4 = findViewById(R.id.tv_count4);
+        tvcount4.setText(count4+"");
+
+        btnAdd5=findViewById(R.id.btn_add5);
+        btnMinus5= findViewById(R.id.btn_minus5);
+        tvcount5 = findViewById(R.id.tv_count5);
+        tvcount5.setText(count5+"");
+
+        btnAdd3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count3++;
+                tvcount3.setText(count3+"");
+            }
+        });
+
+        btnMinus3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count3--;
+                tvcount3.setText(count3+"");
+            }
+        });
+
+        btnAdd4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count4++;
+                tvcount4.setText(count4+"");
+            }
+        });
+
+        btnMinus4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count4--;
+                tvcount4.setText(count4+"");
+            }
+        });
+
+        btnAdd5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count5++;
+                tvcount5.setText(count5+"");
+            }
+        });
+
+        btnMinus5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count5--;
+                tvcount5.setText(count5+"");
+            }
+        });
+
+        Button Button = (Button) findViewById(R.id.btn_map);
+        Button.setOnClickListener(new View.OnClickListener() {
+
+            //@Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), mapActivity.class);
+                startActivity(intent);
+            }
+
+
         });
     }
 

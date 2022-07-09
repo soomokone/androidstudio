@@ -15,9 +15,8 @@
         android:layout_margin="10dp">
         <Button
             android:id="@+id/btn_back"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_alignParentLeft="true"
             android:background="@drawable/x"
             android:gravity="center" />
@@ -49,29 +48,173 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp">
         <Button
-            android:id="@+id/txt_btn_cal"
-            android:textColor="#FF5CA34B"
-            android:layout_width="wrap_content"
+            android:id="@+id/calenderout1"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="0dp"
             android:background="@drawable/line"
-            android:gravity="center"
             android:fontFamily="@font/diary"
+            android:gravity="center"
             android:text="날짜"
-            android:textSize="25dp" />
-        <Button
-            android:id="@+id/txt_btn_man"
             android:textColor="#FF5CA34B"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="80dp"
-            android:layout_alignParentRight="true"
-            android:gravity="center"
-            android:fontFamily="@font/diary"
-            android:background="@drawable/line"
-            android:text="인원"
             android:textSize="25dp" />
-    </RelativeLayout>
+
+
+
+        <TextView
+            android:id="@+id/adult"
+            android:layout_width="30dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="60dp"
+            android:gravity="center"
+            android:text="성인"
+            android:textColor="#FF5CA34B"
+            android:textSize="15sp"
+            tools:layout_editor_absoluteX="196dp"
+            tools:layout_editor_absoluteY="232dp" />
+
+
+        <Button
+            android:id="@+id/btn_minus3"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="90dp"
+            android:background="@drawable/line"
+            android:fontFamily="@font/diary"
+            android:gravity="center"
+            android:text="-"
+            android:textColor="#FF5CA34B"
+            android:textSize="25dp" />
+
+
+        <TextView
+            android:id="@+id/tv_count3"
+            android:layout_width="30dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="110dp"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#FF5CA34B"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="196dp"
+            tools:layout_editor_absoluteY="232dp" />
+
+
+        <Button
+            android:id="@+id/btn_add3"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="140dp"
+            android:background="@drawable/line"
+            android:fontFamily="@font/diary"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="#FF5CA34B"
+            android:textSize="25dp" />
+
+
+        <TextView
+            android:id="@+id/kid"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="160dp"
+            android:gravity="center"
+            android:text="청소년"
+            android:textColor="#FF5CA34B"
+            android:textSize="15sp"
+            tools:layout_editor_absoluteX="196dp"
+            tools:layout_editor_absoluteY="232dp" />
+
+        <Button
+            android:id="@+id/btn_minus4"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="210dp"
+            android:background="@drawable/line"
+            android:fontFamily="@font/diary"
+            android:gravity="center"
+            android:text="-"
+            android:textColor="#FF5CA34B"
+            android:textSize="25dp" />
+
+
+
+        <TextView
+            android:id="@+id/tv_count4"
+            android:layout_width="30dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="230dp"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#FF5CA34B"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="196dp"
+            tools:layout_editor_absoluteY="232dp" />
+
+        <Button
+            android:id="@+id/btn_add4"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="260dp"
+            android:background="@drawable/line"
+            android:fontFamily="@font/diary"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="#FF5CA34B"
+            android:textSize="25dp" />
+
+
+        <TextView
+            android:id="@+id/elder"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="270dp"
+            android:gravity="center"
+            android:text="노인"
+            android:textColor="#FF5CA34B"
+            android:textSize="15sp"
+            tools:layout_editor_absoluteX="196dp"
+            tools:layout_editor_absoluteY="232dp" />
+
+        <Button
+            android:id="@+id/btn_minus5"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="310dp"
+            android:background="@drawable/line"
+            android:fontFamily="@font/diary"
+            android:gravity="center"
+            android:text="-"
+            android:textColor="#FF5CA34B"
+            android:textSize="25dp" />
+
+
+
+        <TextView
+            android:id="@+id/tv_count5"
+            android:layout_width="30dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="328dp"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#FF5CA34B"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="196dp"
+            tools:layout_editor_absoluteY="232dp" />
+
+        <Button
+            android:id="@+id/btn_add5"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="358dp"
+            android:background="@drawable/line"
+            android:fontFamily="@font/diary"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="#FF5CA34B"
+            android:textSize="25dp" />
+
+</RelativeLayout>
     <ListView
         android:id="@+id/list_view"
         android:background="@drawable/line"

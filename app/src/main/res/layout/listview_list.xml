@@ -11,13 +11,13 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="100dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
@@ -28,30 +28,33 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center"
-                android:text="수목원이름"
                 android:fontFamily="@font/diary"
+                android:text="수목원이름"
                 android:textColor="#FF5CA34B"
-                android:textSize="15dp" />
+                android:textSize="25dp" />
 
             <TextView
                 android:id="@+id/city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center"
-                android:text="주소"
                 android:fontFamily="@font/diary"
+                android:text="주소"
                 android:textColor="#FF5CA34B"
-                android:textSize="15dp" />
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center"
-                android:text="입장료"
                 android:fontFamily="@font/diary"
+                android:text="입장료"
                 android:textColor="#FF5CA34B"
-                android:textSize="15dp" />
+                android:textSize="20dp" />
+
+
+
 
         </LinearLayout>
 

@@ -17,9 +17,11 @@ import com.android.volley.VolleyError;
 import me.relex.circleindicator.CircleIndicator3;
 
 public class MainActivity extends AppCompatActivity {
-    private Button btnAdd, btnMinus;
-    private TextView tvcount;
+    private Button btnAdd, btnMinus,btnAdd1,btnMinus1,btnAdd2,btnMinus2;
+    private TextView tvcount,tvcount1,tvcount2;
     private int count = 0;
+    private int count1=0;
+    private int count2=0;
     private ViewPager2 mPager;
     private FragmentStateAdapter pagerAdapter;
     private int num_page = 4;
@@ -45,6 +47,15 @@ public class MainActivity extends AppCompatActivity {
         btnAdd = findViewById(R.id.btn_add);
         btnMinus = findViewById(R.id.btn_minus);
 
+        btnAdd1=findViewById(R.id.btn_add1);
+        btnMinus1= findViewById(R.id.btn_minus1);
+        tvcount1 = findViewById(R.id.tv_count1);
+        tvcount1.setText(count1+"");
+
+        btnAdd2=findViewById(R.id.btn_add2);
+        btnMinus2= findViewById(R.id.btn_minus2);
+        tvcount2 = findViewById(R.id.tv_count2);
+        tvcount2.setText(count2+"");
         seoul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnMinus.setOnClickListener(new View.OnClickListener() {
+        btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 count++;
@@ -65,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnAdd.setOnClickListener(new View.OnClickListener() {
+        btnMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 count--;
@@ -73,7 +84,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnAdd1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count1++;
+                tvcount1.setText(count1+"");
+            }
+        });
 
+        btnMinus1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count1--;
+                tvcount1.setText(count1+"");
+            }
+        });
+
+        btnAdd2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count2++;
+                tvcount2.setText(count2+"");
+            }
+        });
+
+        btnMinus2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                count2--;
+                tvcount2.setText(count2+"");
+            }
+        });
         incheon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

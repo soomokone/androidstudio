@@ -52,17 +52,7 @@
             android:textColor="#FF5CA34B"
             android:textSize="25dp" />
 
-        <TextView
-            android:id="@+id/calendar"
-            android:layout_width="30dp"
-            android:layout_height="45dp"
-            android:layout_marginLeft="60dp"
-            android:gravity="center"
-            android:text="jhjhgk"
-            android:textColor="#FF5CA34B"
-            android:textSize="15sp"
-            tools:layout_editor_absoluteX="196dp"
-            tools:layout_editor_absoluteY="232dp" />
+
 
         <TextView
             android:id="@+id/adult"
@@ -81,11 +71,11 @@
             android:id="@+id/btn_minus"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="140dp"
+            android:layout_marginLeft="90dp"
             android:background="@drawable/line"
             android:fontFamily="@font/diary"
             android:gravity="center"
-            android:text="+"
+            android:text="-"
             android:textColor="#FF5CA34B"
             android:textSize="25dp" />
 
@@ -102,15 +92,118 @@
             tools:layout_editor_absoluteX="196dp"
             tools:layout_editor_absoluteY="232dp" />
 
+
         <Button
             android:id="@+id/btn_add"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="90dp"
+            android:layout_marginLeft="140dp"
+            android:background="@drawable/line"
+            android:fontFamily="@font/diary"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="#FF5CA34B"
+            android:textSize="25dp" />
+
+
+        <TextView
+            android:id="@+id/kid"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="160dp"
+            android:gravity="center"
+            android:text="청소년"
+            android:textColor="#FF5CA34B"
+            android:textSize="15sp"
+            tools:layout_editor_absoluteX="196dp"
+            tools:layout_editor_absoluteY="232dp" />
+
+        <Button
+            android:id="@+id/btn_minus1"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="210dp"
             android:background="@drawable/line"
             android:fontFamily="@font/diary"
             android:gravity="center"
             android:text="-"
+            android:textColor="#FF5CA34B"
+            android:textSize="25dp" />
+
+
+
+        <TextView
+            android:id="@+id/tv_count1"
+            android:layout_width="30dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="230dp"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#FF5CA34B"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="196dp"
+            tools:layout_editor_absoluteY="232dp" />
+
+        <Button
+            android:id="@+id/btn_add1"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="260dp"
+            android:background="@drawable/line"
+            android:fontFamily="@font/diary"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="#FF5CA34B"
+            android:textSize="25dp" />
+
+
+        <TextView
+            android:id="@+id/elder"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="270dp"
+            android:gravity="center"
+            android:text="노인"
+            android:textColor="#FF5CA34B"
+            android:textSize="15sp"
+            tools:layout_editor_absoluteX="196dp"
+            tools:layout_editor_absoluteY="232dp" />
+
+        <Button
+            android:id="@+id/btn_minus2"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="310dp"
+            android:background="@drawable/line"
+            android:fontFamily="@font/diary"
+            android:gravity="center"
+            android:text="-"
+            android:textColor="#FF5CA34B"
+            android:textSize="25dp" />
+
+
+
+        <TextView
+            android:id="@+id/tv_count2"
+            android:layout_width="30dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="328dp"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#FF5CA34B"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="196dp"
+            tools:layout_editor_absoluteY="232dp" />
+
+        <Button
+            android:id="@+id/btn_add2"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="358dp"
+            android:background="@drawable/line"
+            android:fontFamily="@font/diary"
+            android:gravity="center"
+            android:text="+"
             android:textColor="#FF5CA34B"
             android:textSize="25dp" />
 
@@ -129,9 +222,10 @@
             android:layout_width="wrap_content"
             android:layout_height="75dp"
             android:layout_margin="5dp"
-            android:background="@drawable/circle"
+
             android:gravity="center"
             android:text="서울"
+            android:background="@drawable/line"
             android:textColor="#5CA34B"
             android:fontFamily="@font/diary"
             android:textSize="20sp"
@@ -144,7 +238,7 @@
             android:layout_height="75dp"
             android:layout_margin="5dp"
             android:fontFamily="@font/diary"
-            android:background="@drawable/circle"
+            android:background="@drawable/line"
             android:gravity="center"
             android:text="경기/인천"
             android:textColor="#5CA34B"
@@ -157,7 +251,7 @@
             android:layout_width="wrap_content"
             android:layout_height="75dp"
             android:layout_margin="5dp"
-            android:background="@drawable/circle"
+            android:background="@drawable/line"
             android:gravity="center"
             android:text="강원"
             android:fontFamily="@font/diary"
@@ -171,7 +265,7 @@
             android:layout_width="wrap_content"
             android:layout_height="75dp"
             android:layout_margin="5dp"
-            android:background="@drawable/circle"
+            android:background="@drawable/line"
             android:gravity="center"
             android:text="충청/대전"
             android:fontFamily="@font/diary"
@@ -191,7 +285,7 @@
             android:layout_width="wrap_content"
             android:layout_height="75dp"
             android:layout_margin="5dp"
-            android:background="@drawable/circle"
+            android:background="@drawable/line"
             android:gravity="center"
             android:text="경상"
             android:fontFamily="@font/diary"
@@ -205,7 +299,7 @@
             android:layout_width="wrap_content"
             android:layout_height="75dp"
             android:layout_margin="5dp"
-            android:background="@drawable/circle"
+            android:background="@drawable/line"
             android:gravity="center"
             android:text="제주"
             android:fontFamily="@font/diary"
@@ -219,7 +313,7 @@
             android:layout_width="wrap_content"
             android:layout_height="75dp"
             android:layout_margin="5dp"
-            android:background="@drawable/circle"
+            android:background="@drawable/line"
             android:gravity="center"
             android:text="전라"
             android:fontFamily="@font/diary"
@@ -233,7 +327,7 @@
             android:layout_width="wrap_content"
             android:layout_height="75dp"
             android:layout_margin="5dp"
-            android:background="@drawable/circle"
+            android:background="@drawable/line"
             android:fontFamily="@font/diary"
             android:gravity="center"
             android:textColor="#5CA34B"
@@ -244,14 +338,15 @@
 
 
     <FrameLayout
-        android:layout_width="400dp"
+        android:layout_width="380dp"
         android:layout_height="200dp"
         android:layout_gravity="center">
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewpager"
+            android:background="@drawable/line"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="170dp"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
             android:clipChildren="false"
@@ -277,6 +372,7 @@
             android:layout_width="390dp"
             android:layout_height="60dp"
             android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/line"
             android:fontFamily="@font/diary"
             android:gravity="center"
