@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         tvcount.setText(count+"");
         btnAdd = findViewById(R.id.btn_add);
         btnMinus = findViewById(R.id.btn_minus);
+
         seoul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

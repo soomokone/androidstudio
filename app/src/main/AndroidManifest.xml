@@ -49,6 +49,10 @@
             android:theme="@style/Theme.AppCompat"
             ></activity>
 
+        <activity android:name=".detailActivity"
+            android:theme="@style/Theme.AppCompat"
+            ></activity>
+
         <activity android:name=".weatheractivity"
             android:theme="@style/Theme.AppCompat"
             ></activity>

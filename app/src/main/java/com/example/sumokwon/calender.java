@@ -23,6 +23,7 @@ public class calender extends AppCompatActivity {
     public Button save_Btn;
     public TextView diaryTextView,textView2,textView3;
     public EditText contextEditText;
+    public int year,month,dayOfMonth;
 
 
     @Override
@@ -44,7 +45,6 @@ public class calender extends AppCompatActivity {
         //textView3.setText(name+"님의 달력 일기장");
 
 
-
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
@@ -55,25 +55,32 @@ public class calender extends AppCompatActivity {
 
                 diaryTextView.setText(String.format("%d / %d / %d",year,month+1,dayOfMonth));
                 contextEditText.setText("");
-               // checkDay(year,month,dayOfMonth,userID);
+                checkDay(year,month,dayOfMonth);
             }
         });
+
+
         save_Btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
 
                 Button Button = (Button) findViewById(R.id.save_Btn);
-                Button.setOnClickListener(new View.OnClickListener() {
 
-                    //@Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(getApplicationContext(),ListViewActivity.class);
-                        startActivity(intent);
-                    }
+                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                       intent.putExtra("Y",year);
+                       intent.putExtra("M",month);
+                       intent.putExtra("D",dayOfMonth);
 
+                    startActivity(intent);
+//                    //@Override
+//                    public void onClick(View view) {
+//                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+//                        intent.putExtra("Y",);
+//
+//                        startActivity(intent);
+//                    }
 
-                });
 //                saveDiary(fname);
 //                str=contextEditText.getText().toString();
 //                textView2.setText(str);
@@ -82,15 +89,12 @@ public class calender extends AppCompatActivity {
 //                contextEditText.setVisibility(View.INVISIBLE);
 //                textView2.setVisibility(View.VISIBLE);
 
-
-
-
             }
         });
     }
 
-    public void  checkDay(int cYear,int cMonth,int cDay,String userID){
-        fname=""+userID+cYear+"-"+(cMonth+1)+""+"-"+cDay+".txt";//저장할 파일 이름설정
+    public void  checkDay(int cYear,int cMonth,int cDay){
+        fname=""+cYear+"-"+(cMonth+1)+""+"-"+cDay+".txt";//저장할 파일 이름설정
         FileInputStream fis=null;//FileStream fis 변수
 
         try{
@@ -119,6 +123,7 @@ public class calender extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
     @SuppressLint("WrongConstant")
     public void removeDiary(String readDay){
         FileOutputStream fos=null;

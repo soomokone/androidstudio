@@ -53,6 +53,18 @@
             android:textSize="25dp" />
 
         <TextView
+            android:id="@+id/calendar"
+            android:layout_width="30dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="60dp"
+            android:gravity="center"
+            android:text="jhjhgk"
+            android:textColor="#FF5CA34B"
+            android:textSize="15sp"
+            tools:layout_editor_absoluteX="196dp"
+            tools:layout_editor_absoluteY="232dp" />
+
+        <TextView
             android:id="@+id/adult"
             android:layout_width="30dp"
             android:layout_height="45dp"
@@ -63,6 +75,7 @@
             android:textSize="15sp"
             tools:layout_editor_absoluteX="196dp"
             tools:layout_editor_absoluteY="232dp" />
+
 
         <Button
             android:id="@+id/btn_minus"
@@ -221,10 +234,10 @@
             android:layout_height="75dp"
             android:layout_margin="5dp"
             android:background="@drawable/circle"
+            android:fontFamily="@font/diary"
             android:gravity="center"
             android:textColor="#5CA34B"
             android:textSize="20sp"
-            android:fontFamily="@font/diary"
             tools:layout_editor_absoluteX="10dp"
             tools:layout_editor_absoluteY="199dp" />
     </LinearLayout>

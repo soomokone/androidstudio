@@ -67,6 +67,7 @@ public class ListViewActivity extends AppCompatActivity {
     public String mJsonString;
 
     String city,a_url;
+    String name1, city1, address, link;
     // private Context mContext=ListViewActivity.this;
     private String str;
     public static final int REQUEST_CODE_MENU = 101;
@@ -80,7 +81,6 @@ public class ListViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listview);
 
-
         Intent i=getIntent();
         city=i.getStringExtra("city");
         a_url=i.getStringExtra("url");
@@ -89,15 +89,15 @@ public class ListViewActivity extends AppCompatActivity {
         list_text=(TextView)findViewById(R.id.list_text);
         list_text.setText(city);
 
-        Intent intent=new Intent(getApplicationContext(),ListViewActivity.class );
 
+        //Intent intent=new Intent(getApplicationContext(),ListViewActivity.class );
         //listview
         ListViewActivity.GetData task = new ListViewActivity.GetData();
         task.execute(a_url);
 
-        txt_btn_cal=(Button)findViewById(R.id.txt_btn_cal);//날짜선택 textview
-        txt_btn_cal.setOnClickListener(new View.OnClickListener() {
 
+        txt_btn_cal=(Button)findViewById(R.id.txt_btn_cal);//날짜선택
+        txt_btn_cal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //list_calender로 넘기기
@@ -105,6 +105,7 @@ public class ListViewActivity extends AppCompatActivity {
                 startActivityForResult(intent,REQUEST_CODE_MENU);
             }
         });
+
 
         txt_btn_man=(Button)findViewById(R.id.txt_btn_man);//인원 선택 textview
         txt_btn_man.setOnClickListener(new View.OnClickListener() {
@@ -114,11 +115,13 @@ public class ListViewActivity extends AppCompatActivity {
             }
         });
 
+
         btn_back=(Button)findViewById(R.id.btn_back);
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) { onBackPressed();}
         });
+
 
         btn_map=(Button)findViewById(R.id.btn_map);//지도보기 버튼
         btn_map.setOnClickListener(new View.OnClickListener() {
@@ -128,6 +131,10 @@ public class ListViewActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
+
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode==RESULT_OK){
@@ -241,33 +248,22 @@ public class ListViewActivity extends AppCompatActivity {
                 String strChild = item.getString(TAG_child);
                 String strElder = item.getString(TAG_elderly);
 
+                String address = item.getString(TAG_address);
+                String link = item.getString(TAG_link);
+
                 String price1 = String.valueOf(Calc(strAdult,strTeen,strArmy,strChild,strElder));
 
                 Log.d(TAG, "name  - " + name1);
                 Log.d(TAG, "city  - " + city1);
                 Log.d(TAG, "city  - " + price1);
-                //arraylist.append(store_id,store_name,Price);
-                //marrayList = new ArrayList<String>();
-                //marrayList.add(name);
-                //marrayList.add(city);
-                mItemList.add(new SampleData(name1,city1,price1));
-                Log.d(TAG, "response2  - " + mItemList);
+                Log.d(TAG, "address  - " + address);
+                Log.d(TAG, "link  - " + link);
 
-                //System.out.println(Arrays.toString(a));
-                //HashMap<String, String> hashMap = new HashMap<>();
-                //hashMap.put(TAG_city, city);
+                mItemList.add(new SampleData(name1,city1,price1,address,link));
 
             }
 
-            //mlistviewAdatper = new ListViewAdapter(this,mItemList);
-            // mArrayList.add(hashMap);
             Log.d(TAG, "response2  - " + mItemList);
-
-//            ListAdapter adapter = new SimpleAdapter(
-//                    ListViewActivity.this, ArrayList,  R.layout.listview_list,
-//                    new String[]{TAG_name,TAG_city,},
-//                    new int[]{R.id.name, R.id.city}
-//            );
 
         } catch (JSONException e) {
 
@@ -281,7 +277,20 @@ public class ListViewActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View a_view, int position, long l) {
                 final SampleData item = (SampleData) mlistviewAdatper.getItem(position);
-                Toast.makeText(ListViewActivity.this, item.getCity(), Toast.LENGTH_LONG).show();
+
+
+                //Toast.makeText(PhMainActivity.this, item.getCountry() + " Click event", Toast.LENGTH_SHORT).show();
+
+                Intent intent=new Intent(getApplicationContext(),detailActivity.class );
+                intent.putExtra("name",item.getName());
+                intent.putExtra("address",item.getAddress());
+                intent.putExtra("link",item.getLink());
+
+                Log.d(TAG, "address  - " + address);
+                Log.d(TAG, "link  - " + link);
+
+                startActivity(intent);//activity 실행
+
             }
         }));
     }
