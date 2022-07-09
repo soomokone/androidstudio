@@ -135,15 +135,15 @@ public class ListViewActivity extends AppCompatActivity {
 
 
 
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==RESULT_OK){
-            Intent i=getIntent();
-            str=i.getStringExtra(str);
-            txt_btn_cal.setText(str);
-        }
-
-    }
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if(requestCode==RESULT_OK){
+//            Intent i=getIntent();
+//            str=i.getStringExtra(str);
+//            txt_btn_cal.setText(str);
+//        }
+//
+//    }
 
     //데이터 받아옴
     private class GetData extends AsyncTask<String, Void, String> {
@@ -314,5 +314,17 @@ public class ListViewActivity extends AppCompatActivity {
         Integer calc = adult*numAdult + teenager*numTeen + army*numArmy + child*numChild + elderly*numElder;
         return calc;
     };
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==REQUEST_CODE_MENU){
+            if(resultCode==RESULT_OK){
+                str=data.getStringExtra("str");
+                txt_btn_cal.setText(str);
+            }
+
+        }
+    }
 
 }
