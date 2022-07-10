@@ -1,13 +1,13 @@
 package com.example.sumokwon;
 
-
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
@@ -23,8 +23,12 @@ public class MainActivity extends AppCompatActivity {
     private FragmentStateAdapter pagerAdapter;
     private int num_page = 4;
     private CircleIndicator3 mIndicator;
-    Button seoul,incheon,gangwon,daejon,gyeongnam,jeju,jeolla,location2;
+    Button seoul,incheon,gangwon,daejon,gyeongnam,jeju,jeolla,location2,calenderout;
     String city,url;
+    private String str=null;
+    public static final int REQUEST_CODE_MENU = 101;
+    public static final int  REQUEST_CODE_MAIN = 202;
+    public static final int  REQUEST_CODE_LIST = 303;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,13 @@ public class MainActivity extends AppCompatActivity {
         jeju=(Button)findViewById(R.id.jeju);
         jeolla=(Button)findViewById(R.id.jeolla);
         location2=(Button)findViewById(R.id.location2);
+        calenderout= (Button) findViewById(R.id.calenderout);
+
+        Intent i=getIntent();
+        str=i.getStringExtra("Strr");
+        if(str!=null){
+            calenderout.setText(str);
+        }
 
         seoul.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,10 +59,10 @@ public class MainActivity extends AppCompatActivity {
                 url = "http://soomokone.dothome.co.kr/seoul.php";
                 intent.putExtra("city",city);
                 intent.putExtra("url",url);
+                intent.putExtra("str",str);
                 startActivity(intent);//activity 실행
             }
         });
-
 
         incheon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 url = "http://soomokone.dothome.co.kr/incheon.php";
                 intent.putExtra("city",city);
                 intent.putExtra("url",url);
+                intent.putExtra("str",str);
                 startActivity(intent);//activity 실행
             }
         });
@@ -73,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 url = "http://soomokone.dothome.co.kr/gangwon.php";
                 intent.putExtra("city",city);
                 intent.putExtra("url",url);
+                intent.putExtra("str",str);
                 startActivity(intent);//activity 실행
             }
         });
@@ -85,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
                 url = "http://soomokone.dothome.co.kr/daejeon.php";
                 intent.putExtra("city",city);
                 intent.putExtra("url",url);
+                intent.putExtra("str",str);
                 startActivity(intent);//activity 실행
             }
         });
@@ -97,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
                 url = "http://soomokone.dothome.co.kr/gyeongsang.php";
                 intent.putExtra("city",city);
                 intent.putExtra("url",url);
+                intent.putExtra("str",str);
                 startActivity(intent);//activity 실행
             }
         });
@@ -109,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
                 url = "http://soomokone.dothome.co.kr/jeju.php";
                 intent.putExtra("city",city);
                 intent.putExtra("url",url);
+                intent.putExtra("str",str);
                 startActivity(intent);//activity 실행
             }
         });
@@ -121,48 +137,38 @@ public class MainActivity extends AppCompatActivity {
                 url = "http://soomokone.dothome.co.kr/jeonra.php";
                 intent.putExtra("city",city);
                 intent.putExtra("url",url);
+                intent.putExtra("str",str);
                 startActivity(intent);//activity 실행
             }
         });
 
-
-
-
     Button Button = (Button) findViewById(R.id.map);
         Button.setOnClickListener(new View.OnClickListener() {
-
-            //@Override
+            @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), mapActivity.class);
                 startActivity(intent);
             }
-
-
         });
 
-        Button  = (Button) findViewById(R.id.calenderout);
-        Button.setOnClickListener(new View.OnClickListener() {
-
-            //@Override
+        calenderout.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), List_calender .class);
-                startActivity(intent);
+                startActivityForResult(intent,REQUEST_CODE_MENU);
+                //startActivity(intent);
             }
-
-
         });
 
         Button  = (Button) findViewById(R.id.person);
         Button.setOnClickListener(new View.OnClickListener() {
-
-            //@Override
+            @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), person.class);
                 startActivity(intent);
             }
-
-
         });
+
 /**
  * 가로 슬라이드 뷰 Fragment
  */
@@ -203,6 +209,19 @@ public class MainActivity extends AppCompatActivity {
                 mIndicator.animatePageSelected(position%num_page);
             }
         });
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==REQUEST_CODE_MENU){
+            if(resultCode==RESULT_OK){
+                str=data.getStringExtra("str");
+                calenderout.setText(str);
+                System.out.println("1111111111111111111"+str);
+                //startActivityForResult(i,REQUEST_CODE_MAIN);
+            }
+
+        }
     }
 }
 

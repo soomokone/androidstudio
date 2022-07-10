@@ -67,14 +67,15 @@ public class List_calender extends AppCompatActivity{
                     //@Override
                    // public void onClick(View view) {
                 saveDiary(fname);
-                str=contextEditText.getText().toString();
+                str=diaryTextView.getText().toString();
                 //textView2.setText(str);
                 save_Btn.setVisibility(View.INVISIBLE);
                 contextEditText.setVisibility(View.INVISIBLE);
                 //textView2.setVisibility(View.VISIBLE);
-                Intent intent = new Intent(getApplicationContext(),ListViewActivity.class);
+                Intent intent = new Intent();
                 intent.putExtra("str",str);
-                startActivityForResult(intent,RESULT_OK);
+                setResult(RESULT_OK,intent);
+                finish();
                    // }
                 //});
 //                saveDiary(fname);

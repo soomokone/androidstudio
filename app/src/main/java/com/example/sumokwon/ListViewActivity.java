@@ -74,8 +74,10 @@ public class ListViewActivity extends AppCompatActivity {
     String city,a_url;
     String name1, city1, address, link;
     // private Context mContext=ListViewActivity.this;
-    private String str;
+    private String str=null;
     public static final int REQUEST_CODE_MENU = 101;
+    public static final int  REQUEST_CODE_MAIN = 202;
+    public static final int  REQUEST_CODE_LIST = 303;
     private Context mContext=ListViewActivity.this;
 
     private Button btn_back,btn_map,txt_btn_cal,txt_btn_man;
@@ -89,10 +91,13 @@ public class ListViewActivity extends AppCompatActivity {
         Intent i=getIntent();
         city=i.getStringExtra("city");
         a_url=i.getStringExtra("url");
+        str=i.getStringExtra("str");
 
-
+        txt_btn_cal=(Button)findViewById(R.id.calenderout1);//날짜선택
         list_text=(TextView)findViewById(R.id.list_text);
         list_text.setText(city);
+        txt_btn_cal.setText(str);
+
 
 
         //Intent intent=new Intent(getApplicationContext(),ListViewActivity.class );
@@ -107,7 +112,8 @@ public class ListViewActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //list_calender로 넘기기
                 Intent intent = new Intent(getApplicationContext(), List_calender.class);
-                startActivityForResult(intent,REQUEST_CODE_MENU);
+                startActivityForResult(intent,REQUEST_CODE_LIST);
+
             }
         });
 
@@ -124,7 +130,14 @@ public class ListViewActivity extends AppCompatActivity {
         btn_back=(Button)findViewById(R.id.btn_back);
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) { onBackPressed();}
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                System.out.println("intentintentintetnitnteitneientienteitn"+str);
+                intent.putExtra("strr",str);
+                //startActivity(intent);
+                onBackPressed();
+
+            }
         });
 
 
@@ -202,28 +215,15 @@ public class ListViewActivity extends AppCompatActivity {
         Button Button = (Button) findViewById(R.id.btn_map);
         Button.setOnClickListener(new View.OnClickListener() {
 
-            //@Override
+            @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), mapActivity.class);
                 startActivity(intent);
             }
-
-
         });
     }
 
 
-
-
-//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if(requestCode==RESULT_OK){
-//            Intent i=getIntent();
-//            str=i.getStringExtra(str);
-//            txt_btn_cal.setText(str);
-//        }
-//
-//    }
 
     //데이터 받아옴
     private class GetData extends AsyncTask<String, Void, String> {
@@ -394,17 +394,30 @@ public class ListViewActivity extends AppCompatActivity {
         Integer calc = adult*numAdult + teenager*numTeen + army*numArmy + child*numChild + elderly*numElder;
         return calc;
     };
-
+//
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if(requestCode==REQUEST_CODE_MENU){
+//            if(resultCode==RESULT_OK){
+//                str=data.getStringExtra("str");
+//                txt_btn_cal.setText(str);
+//            }
+//
+//        }
+//    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==REQUEST_CODE_MENU){
-            if(resultCode==RESULT_OK){
-                str=data.getStringExtra("str");
+        if(requestCode==REQUEST_CODE_LIST) {
+            if (resultCode == RESULT_OK) {
+                str = data.getStringExtra("str");
                 txt_btn_cal.setText(str);
-            }
+                System.out.println("listview_________" + str);
 
+            }
         }
     }
+
 
 }
