@@ -17,10 +17,7 @@ import com.android.volley.VolleyError;
 import me.relex.circleindicator.CircleIndicator3;
 
 public class MainActivity extends AppCompatActivity {
-    private Button btnAdd, btnMinus,btnAdd1,btnMinus1,btnAdd2,btnMinus2;
-    private TextView tvcount,tvcount1,tvcount2;
-    private int count = 0;
-    private int count1=0;
+
     private int count2=0;
     private ViewPager2 mPager;
     private FragmentStateAdapter pagerAdapter;
@@ -42,20 +39,7 @@ public class MainActivity extends AppCompatActivity {
         jeju=(Button)findViewById(R.id.jeju);
         jeolla=(Button)findViewById(R.id.jeolla);
         location2=(Button)findViewById(R.id.location2);
-        tvcount = findViewById(R.id.tv_count);
-        tvcount.setText(count+"");
-        btnAdd = findViewById(R.id.btn_add);
-        btnMinus = findViewById(R.id.btn_minus);
 
-        btnAdd1=findViewById(R.id.btn_add1);
-        btnMinus1= findViewById(R.id.btn_minus1);
-        tvcount1 = findViewById(R.id.tv_count1);
-        tvcount1.setText(count1+"");
-
-        btnAdd2=findViewById(R.id.btn_add2);
-        btnMinus2= findViewById(R.id.btn_minus2);
-        tvcount2 = findViewById(R.id.tv_count2);
-        tvcount2.setText(count2+"");
         seoul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,53 +52,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                count++;
-                tvcount.setText(count+"");
-            }
-        });
 
-        btnMinus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                count--;
-                tvcount.setText(count+"");
-            }
-        });
-
-        btnAdd1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                count1++;
-                tvcount1.setText(count1+"");
-            }
-        });
-
-        btnMinus1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                count1--;
-                tvcount1.setText(count1+"");
-            }
-        });
-
-        btnAdd2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                count2++;
-                tvcount2.setText(count2+"");
-            }
-        });
-
-        btnMinus2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                count2--;
-                tvcount2.setText(count2+"");
-            }
-        });
         incheon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -207,13 +145,24 @@ public class MainActivity extends AppCompatActivity {
 
             //@Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), calender.class);
+                Intent intent = new Intent(getApplicationContext(), List_calender .class);
                 startActivity(intent);
             }
 
 
         });
 
+        Button  = (Button) findViewById(R.id.person);
+        Button.setOnClickListener(new View.OnClickListener() {
+
+            //@Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), person.class);
+                startActivity(intent);
+            }
+
+
+        });
 /**
  * 가로 슬라이드 뷰 Fragment
  */
